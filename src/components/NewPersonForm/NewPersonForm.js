@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 class NewPersonForm extends Component {
     constructor(props) {
         super(props);
@@ -14,10 +13,8 @@ class NewPersonForm extends Component {
                 role: '',
                 rating: ''
             }
-        }
-    }
-
-
+        };
+    };
 
     render() {
         return (
@@ -27,13 +24,8 @@ class NewPersonForm extends Component {
                 <input value={this.props.personForm.role} type="text" onChange={this.props.handleChangeForInput('role')} placeholder="Why are they famous?" />
                 <input type="submit" />
             </form>
-
-        )
-    }
-}
-
-
-
-
+        );
+    };
+};
 
 export default NewPersonForm;

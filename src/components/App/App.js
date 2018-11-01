@@ -3,7 +3,7 @@ import './App.css';
 import Header from '../Header/Header';
 import NewPersonForm from '../NewPersonForm/NewPersonForm';
 import PersonList from '../PersonList/PersonList';
-import CurrentPerson from '../CurrentPerson/CurrentPerson';
+
 class App extends Component {
 
   constructor(props) {
@@ -20,11 +20,10 @@ class App extends Component {
         role: '',
         rating: ''
       }
-    }
-  }
+    };
+  };
 
   handleChangeFor = (propertyName) => {
-
 
     return (event) => {
       this.setState({
@@ -32,9 +31,9 @@ class App extends Component {
           ...this.state.newPerson,
           [propertyName]: event.target.value
         }
-      })
-    }
-  }
+      });
+    };
+  };
 
   handleClick = (event) => {
     console.log(this.state);
@@ -51,24 +50,26 @@ class App extends Component {
         role: '',
         rating: ''
       }
-    })
+    });
 
-  }
+  };
 
   render() {
     return (
       <div className="App">
+        
         <Header />
-        <CurrentPerson 
-        currentPerson={this.state.newPerson} />
+
         <NewPersonForm
           handleChangeForInput={this.handleChangeFor}
           handleClick={this.handleClick}
           personForm={this.state.newPerson} />
+        
         <PersonList listOfPeople={this.state.personList} />
+      
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;
